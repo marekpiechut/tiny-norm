@@ -1,0 +1,57 @@
+{
+	"name": "@dayone-labs/tiny-norm",
+	"version": "0.1.0",
+	"description": "Small \"Not ORM\" library for PostgreSQL with TypeScript support",
+	"keywords": [
+		"postgres",
+		"pg",
+		"tinyorm",
+		"notorm",
+		"orm",
+		"database",
+		"typescript"
+	],
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dayone-labs/tiny-norm.git"
+	},
+	"author": {
+		"email": "marek@dayone.pl",
+		"name": "Marek Piechut",
+		"url": "https://marekpiechut.github.io"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">= 18"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"start": "tsc -w",
+		"clean": "shx rm -rf ./lib",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome lint --error-on-warnings src && biome format src",
+		"validate": "npm run lint && npm run typecheck && npm test",
+		"test": "tsx --test test/**.test.ts",
+		"test:watch": "tsx --watch --test test/**.test.ts"
+	},
+	"peerDependencies": {
+		"pg": ">=7.4.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^18.11.9 ",
+		"@types/pg": "^8.11.0",
+		"chai": "^5.2.0",
+		"husky": "^9.1.7",
+		"pg-mem": "^3.0.5",
+		"shx": "^0.4.0",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3"
+	}
+}
